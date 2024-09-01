@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        AvenirRomanFont: ['AvenirRoman', 'sans-serif'], // Define your custom font
+        AvenirBlackFont: ['AvenirBlack', 'sans-serif'], // Define your custom font
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

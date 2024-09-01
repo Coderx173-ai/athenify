@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url('/fonts/AvenirLTStd-Roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url('/fonts/AvenirLTStd-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
