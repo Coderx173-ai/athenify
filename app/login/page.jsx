@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+
 import React, { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
