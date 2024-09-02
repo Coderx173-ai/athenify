@@ -59,7 +59,10 @@ const SubscriptionSection = () => {
                   {plan.name}
                 </h2>
                 <div className="flex items-center justify-center font-AvenirRomanFont gap-1">
-                  <p className="text-white line-through line-through-[#00000] text-2xl">
+                  <p
+                    className="text-white line-through decoration-[#FF0303] text-2xl"
+                    style={{ textDecorationThickness: "4px" }}
+                  >
                     {plan.originalPrice}
                   </p>
                   <p className="text-white text-2xl font-semibold">
