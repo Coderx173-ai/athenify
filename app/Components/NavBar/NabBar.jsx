@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons from react-icons
 import ScrollContext from "../ScrollContext";
 
@@ -9,6 +9,26 @@ const NabBar = () => {
   const { scrollToSection } = useContext(ScrollContext);
   const items = ["Benefit", "Subscriptions", "Expect", "About"];
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Effect to handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 110) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -16,17 +36,21 @@ const NabBar = () => {
   
 
   return (
-    <div className="">
-      <nav className="flex items-center justify-between border-b py-5 px-4 shadow">
-        <div className="flex items-center gap-10">
+    <div className={`sticky top-0 left-0 right-0 !z-[999] ${
+        isScrolled ? ' bg-[#071C25]' : 'bg-transparent'} h-[95px]`}>
+      <nav className="flex items-center justify-between border-b py-4 px-4 shadow">
+        <div className="flex items-center gap-8">
           <Link href={"/"}>
-            <h1 className="font-AvenirBlackFont text-4xl text-white">athenify.ai</h1>
+            <h1 className="font-AvenirBlackFont !text-[39px] font-extrabold text-white">athenify.ai</h1>
           </Link>
           <ul className="hidden md:flex items-center gap-4 font-AvenirRomanFont mt-2">
-            {items?.map((item) => (
-              <Link href="/" key={item}>
-                <li className="cursor-pointer text-white">{item}</li>
-              </Link>
+            {items?.map((item, index) => (
+              
+                <li className="cursor-pointer text-white text-[15px]" key={index}>
+                  <Link href="/"  className="px-2">
+                  {item}
+                  </Link>
+                  </li>
             ))}
           </ul>
         </div>
@@ -41,7 +65,7 @@ const NabBar = () => {
               <FaBars className=" size-8" />
             )}
           </button>
-          <button className="hidden md:flex bg-[#63E1E1] font-AvenirRomanFont px-4 py-1.5 rounded-md text-black ml-4" onClick={() => scrollToSection("subscription")}>
+          <button className="hidden md:flex bg-[#63E1E1] font-AvenirRomanFont px-4 py-1.5 rounded-md text-black ml-4 text-[19px]" onClick={() => scrollToSection("subscription")}>
             Buy Now
           </button>
         </div>
@@ -78,7 +102,7 @@ const NabBar = () => {
             ))}
           </ul>
 
-          <button className="flex bg-[#63E1E1] font-AvenirRomanFont px-14 py-1.5 rounded-md text-black mt-4" onClick={() => scrollToSection("subscription")}>
+          <button className="flex bg-[#63E1E1] font-AvenirRomanFont px-14 py-1.5 rounded-md text-black mt-4" onClick={() => {scrollToSection("subscription"); toggleSidebar()}}>
             Buy Now
           </button>
         </div>

@@ -16,6 +16,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         heroBG: "url('/bg.png')",
+        methodBg: "url('/method.png')",
+        footerBg: "url('/footer-bg.png')",
+        phone: "url('/iphone.png')"
+        // method: "url('/method.png')",
+        // methodBg: " url('/method-img-1.png'), url('/method-img-2.png'), url('/method.png')",
+        
       },
     },
   },

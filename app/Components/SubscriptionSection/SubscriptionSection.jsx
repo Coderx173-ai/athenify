@@ -18,7 +18,7 @@ const SubscriptionSection = () => {
     <div className="max-w-7xl mx-auto py-16"  id="subscription" ref={sectionRefs.subscription}>
       <SectionTitle title={"Flexible Membership Options"} />
       <div className="max-w-[755px] w-full text-center mx-auto pt-4">
-        <p className="text-[18px] text-white">We know decision-making is hard, but don’t sweat it. Choose the membership that’s right for you and start perspiring to greatness.</p>
+        <p className="text-[24px] font-AvenirRomanFont text-white">We know decision-making is hard, but don’t sweat it. Choose the membership that’s right for you and start perspiring to greatness.</p>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center px-4 py-10 gap-8 w-full">
         <PlansCards/>

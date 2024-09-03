@@ -1,4 +1,4 @@
-
+import payment from '@/public/payment.png'
 import tiktok from "@/public/tictok.png";
 import inst from "@/public/inst.png";
 import Link from "next/link";
@@ -6,15 +6,15 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#d0cfd7] to-[#c5d9f2] p-8 text-black">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="font-AvenirBlackFont text-3xl">athenify.ai</h1>
-          <p className="font-AvenirRomanFont text-sm">
+    <footer className="bg-footerBg bg-cover bg-no-repeat px-8 pt-8 text-black">
+      <div className="content-wrapper px-2 md:px-[54px] flex flex-col md:flex-row justify-between items-start gap-4">
+        <div className="flex flex-col gap-2 w-full">
+          <h1 className="font-AvenirBlackFont text-3xl md:text-[39px]">athenify.ai</h1>
+          <p className="font-AvenirBlackFont text-sm md:text-lg">
             Success is not final, failure is not fatal: It <br />
             is the courage to continue that counts.
           </p>
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-4 mt-4 mb-2">
             <Link href={"/"}>
               <Image src={tiktok} alt="image" />
             </Link>
@@ -22,8 +22,9 @@ const Footer = () => {
               <Image src={inst} alt="image" />
             </Link>
           </div>
-          <div className="pt-1 md:mt-0 text-sm text-gray-500">
-            <p>Copyright 2023 athenify.ai, Inc Terms and Privacy</p>
+          <div className="flex flex-col md:flex-row gap-2 items-center justify-between border-t border-white py-2 w-full">
+            <p className='text-base md:text-[22px] font-AvenirRomanFont'>Copyright 2023 athenify.ai, Inc Terms and Privacy</p>
+            <Image src={payment} alt='payment image' />
           </div>
         </div>
       </div>
