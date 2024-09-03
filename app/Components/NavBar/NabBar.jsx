@@ -1,27 +1,31 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons from react-icons
+import ScrollContext from "../ScrollContext";
 
 const NabBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { scrollToSection } = useContext(ScrollContext);
   const items = ["Benefit", "Subscriptions", "Expect", "About"];
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  
+
   return (
     <div className="">
       <nav className="flex items-center justify-between border-b py-5 px-4 shadow">
         <div className="flex items-center gap-10">
           <Link href={"/"}>
-            <h1 className="font-AvenirBlackFont text-4xl">athenify.ai</h1>
+            <h1 className="font-AvenirBlackFont text-4xl text-white">athenify.ai</h1>
           </Link>
           <ul className="hidden md:flex items-center gap-4 font-AvenirRomanFont mt-2">
             {items?.map((item) => (
               <Link href="/" key={item}>
-                <li className="cursor-pointer">{item}</li>
+                <li className="cursor-pointer text-white">{item}</li>
               </Link>
             ))}
           </ul>
@@ -37,7 +41,7 @@ const NabBar = () => {
               <FaBars className=" size-8" />
             )}
           </button>
-          <button className="hidden md:flex bg-[#63E1E1] font-AvenirRomanFont px-4 py-1.5 rounded-md text-black ml-4">
+          <button className="hidden md:flex bg-[#63E1E1] font-AvenirRomanFont px-4 py-1.5 rounded-md text-black ml-4" onClick={() => scrollToSection("subscription")}>
             Buy Now
           </button>
         </div>
@@ -74,7 +78,7 @@ const NabBar = () => {
             ))}
           </ul>
 
-          <button className="flex bg-[#63E1E1] font-AvenirRomanFont px-14 py-1.5 rounded-md text-black mt-4">
+          <button className="flex bg-[#63E1E1] font-AvenirRomanFont px-14 py-1.5 rounded-md text-black mt-4" onClick={() => scrollToSection("subscription")}>
             Buy Now
           </button>
         </div>

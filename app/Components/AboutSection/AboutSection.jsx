@@ -8,7 +8,7 @@ const AboutSection = () => {
     <div className="max-w-7xl mx-auto pb-16 px-6">
       <SectionTitle title={"About"} />
       <div className="flex flex-col md:flex-row pt-16">
-        <p className="md:w-[70%] leading-[35px]">
+        <p className="md:w-[70%] leading-[35px] text-white">
           Bilal Ahmed is a creator with over 5M followers across his social
           platforms. As the CEO of MindMountain, Bilal has used his expertise in
           virality, personal branding and identity shifting to build millions of

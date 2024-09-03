@@ -23,7 +23,7 @@ const ExpectSection = () => {
   ];
   return (
     <div className="max-w-7xl mx-auto pb-10">
-      <h1 className="flex items-center justify-center gap-3 text-3xl md:text-4xl font-AvenirRomanFont">
+      <h1 className="flex items-center justify-center gap-3 text-3xl md:text-4xl font-AvenirRomanFont text-white italic">
         Here's What to Expect...
       </h1>
       <div className="max-w-7xl mx-auto px-4 py-10 mt-8">
