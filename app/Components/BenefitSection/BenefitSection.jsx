@@ -74,14 +74,10 @@ const BenefitSection = () => {
           </div>
         </div>
         <div className="md:w-[30%] pt-10 md:pt-0">
-          <div className="h-[452px] w-[250px] relative mx-auto overflow-hidden">
-            {/* <Image
-              src={man}
-              className="w-full h-full object-center"
-              alt="pic"
-            /> */}
+          <div className="h-[452px] w-[250px] relative mx-auto overflow-hidden b-phone bg-cover bg-left-top">
             
-            <div className="w-full h-full object-center rounded-3xl z-[20] overflow-hidden relative">
+            
+            <div className=" w-full h-full object-center rounded-3xl z-[20] overflow-hidden">
               <Image
                 src={iphone}
                 className="max-w-[398px] max-h-[782px] w-full h-full object-center"

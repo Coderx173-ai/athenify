@@ -22,7 +22,7 @@ const ViewersSection = () => {
 
         {/* Image Section */}
         <div className="rounded-xl w-full">
-          <Image src={viewerImg} alt="Studio Setup" className='w-full' />
+          <Image src={viewerImg} alt="Studio Setup" className='max-w-[313px] max-h-[425px] h-full w-full mx-auto rounded-lg' />
         </div>
 
         {/* 2024 Viewers Data */}
